@@ -1,12 +1,3 @@
-[gd_scene format=3 uid="uid://b354htkbthuvb"]
+[gd_scene format=3 uid="uid://dvkjcfdpwe0la"]
 
 [node name="Introduction" type="Node2D"]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 1150.0
-offset_bottom = 646.0
-text = "																												THIS IS PLACEHOLDER TEXT
-
-<p>Lorem ipsum dolor sit amet. Ex corrupti accusantium quo galisum porro hic optio nihil eos similique voluptas. Et obcaecati molestiae aut aliquam obcaecati in iste laudantium et atque aperiam ad dolorum magni ea doloremque modi sit quos obcaecati. </p><p>Et maiores facilis ut iste commodi et voluptas perferendis! Ut temporibus pariatur et animi dolor et explicabo nihil aut inventore dolores. Ea voluptatem tenetur nam tempore cupiditate qui doloribus perferendis. </p><p>Qui assumenda blanditiis et natus perferendis aut placeat aspernatur. Ab rerum iure ad eveniet voluptate est delectus alias qui illo beatae sit debitis sunt. Eum similique reprehenderit est accusamus numquam 33 minima exercitationem aut rerum numquam id quaerat eveniet sed reiciendis quod et expedita sint? </p><p>Non consequatur quibusdam qui reprehenderit doloribus eos itaque asperiores qui neque voluptas. Sit optio ducimus nam modi repellendus eum nulla commodi est quia voluptatem. </p><p>Aut explicabo consequatur a laboriosam necessitatibus aut adipisci iste qui facere saepe et velit repudiandae qui fugiat quisquam et tempora quia. Aut perferendis laudantium ut quia perspiciatis ut officiis veritatis aut sunt quasi sit quia recusandae. Cum molestiae animi eum praesentium ducimus rem quasi molestiae quo nulla dolore ut perspiciatis aspernatur. </p>
-
-"
