@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bawmiqx7xxmdc"]
+
+[ext_resource type="Texture2D" uid="uid://bdemae30fu4tl" path="res://Assets/Backgrounds/Starting-Room.png" id="1_g0142"]
+
+[node name="Starting-Room" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.833333, 0.854806)
+texture = ExtResource("1_g0142")

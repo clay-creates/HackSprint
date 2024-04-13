@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0n15rlhotqjh"]
+
+[ext_resource type="Texture2D" uid="uid://cjyoj5jdg0w1f" path="res://Assets/Backgrounds/Dining-Room.png" id="1_ssivh"]
+
+[node name="Dining-Room" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.420573, 0.420573)
+texture = ExtResource("1_ssivh")
