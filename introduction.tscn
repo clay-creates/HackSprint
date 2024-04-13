@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://dvkjcfdpwe0la"]
+[gd_scene load_steps=2 format=3 uid="uid://dvkjcfdpwe0la"]
 
-[node name="Introduction" type="Node2D"]
+[ext_resource type="Script" path="res://TypingTextEffect.gd" id="1_qqghg"]
+
+[node name="Typing Text Effect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 1163.0
+offset_bottom = 656.0
+color = Color(0, 0, 0, 1)
+
+[node name="Testing Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 29.0
+offset_right = 1122.0
+offset_bottom = 615.0
+text = "
+This text is for testing purposes
+
+<p>Lorem ipsum dolor sit amet. Hic laboriosam cumque aut eligendi galisum et voluptas veritatis ut repellendus provident. Sed ducimus modi ea vitae ipsam est repellat enim. </p><p>Ea perspiciatis minima qui saepe molestiae et nihil numquam eum quas magni id odio ratione est architecto commodi. Ut consectetur quia est rerum laboriosam id ipsa repellat sed ipsam quia qui dolore nemo. </p><p>Ut officia architecto qui Quis voluptas sed dolore mollitia. Vel aspernatur voluptatibus aut culpa debitis non aspernatur voluptatem cum dignissimos adipisci sed sequi magnam vel galisum assumenda quo voluptatem veniam? Qui doloremque itaque ut sequi corporis eum maxime laboriosam. Eos architecto laboriosam vel voluptatem temporibus qui earum omnis. </p><p>Aut sequi praesentium qui repellendus similique non facilis ducimus et repudiandae quam. Ut velit tenetur sit maxime minima et assumenda repellendus ex omnis laborum ad rerum Quis aut autem rerum hic perferendis similique. </p><p>Et dolorum deleniti ut accusamus vero 33 iusto assumenda qui excepturi tenetur hic sapiente molestiae. Sed assumenda magni a dolorem beatae est excepturi fugit qui autem galisum. </p><p>Est incidunt autem aut consectetur maxime ut consectetur omnis. Ut labore voluptatem aut aliquam blanditiis et consectetur voluptatibus non facilis ratione aut quaerat corporis in harum voluptates eum voluptatem galisum. Ut sapiente natus non sunt fuga qui cupiditate optio et soluta voluptatum aut rerum omnis non commodi architecto. Quo officia omnis qui amet nobis qui consequatur perspiciatis ut optio quas id fuga aspernatur et nisi enim id maxime libero. </p>
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_ratio = -0.000599161
+script = ExtResource("1_qqghg")

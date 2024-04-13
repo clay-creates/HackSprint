@@ -1,12 +1,78 @@
-[gd_scene format=3 uid="uid://b354htkbthuvb"]
+[gd_scene load_steps=7 format=3 uid="uid://b354htkbthuvb"]
 
-[node name="Introduction" type="Node2D"]
+[ext_resource type="Script" path="res://created_by.gd" id="1_1vixq"]
+[ext_resource type="Texture2D" uid="uid://dx3u1kdsphsst" path="res://Created By.png" id="2_au8wu"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 1150.0
-offset_bottom = 646.0
-text = "																												THIS IS PLACEHOLDER TEXT
+[sub_resource type="Animation" id="Animation_r5bap"]
+resource_name = "Fade In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
 
-<p>Lorem ipsum dolor sit amet. Ex corrupti accusantium quo galisum porro hic optio nihil eos similique voluptas. Et obcaecati molestiae aut aliquam obcaecati in iste laudantium et atque aperiam ad dolorum magni ea doloremque modi sit quos obcaecati. </p><p>Et maiores facilis ut iste commodi et voluptas perferendis! Ut temporibus pariatur et animi dolor et explicabo nihil aut inventore dolores. Ea voluptatem tenetur nam tempore cupiditate qui doloribus perferendis. </p><p>Qui assumenda blanditiis et natus perferendis aut placeat aspernatur. Ab rerum iure ad eveniet voluptate est delectus alias qui illo beatae sit debitis sunt. Eum similique reprehenderit est accusamus numquam 33 minima exercitationem aut rerum numquam id quaerat eveniet sed reiciendis quod et expedita sint? </p><p>Non consequatur quibusdam qui reprehenderit doloribus eos itaque asperiores qui neque voluptas. Sit optio ducimus nam modi repellendus eum nulla commodi est quia voluptatem. </p><p>Aut explicabo consequatur a laboriosam necessitatibus aut adipisci iste qui facere saepe et velit repudiandae qui fugiat quisquam et tempora quia. Aut perferendis laudantium ut quia perspiciatis ut officiis veritatis aut sunt quasi sit quia recusandae. Cum molestiae animi eum praesentium ducimus rem quasi molestiae quo nulla dolore ut perspiciatis aspernatur. </p>
+[sub_resource type="Animation" id="Animation_uio0d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
-"
+[sub_resource type="Animation" id="Animation_av61k"]
+resource_name = "Fade Out"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ettfe"]
+_data = {
+"Fade In": SubResource("Animation_r5bap"),
+"Fade Out": SubResource("Animation_av61k"),
+"RESET": SubResource("Animation_uio0d")
+}
+
+[node name="Created By" type="Node2D"]
+script = ExtResource("1_1vixq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+texture = ExtResource("2_au8wu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -22.0
+offset_top = -25.0
+offset_right = 1174.0
+offset_bottom = 669.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ettfe")
+}
