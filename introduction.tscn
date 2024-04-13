@@ -1,35 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvkjcfdpwe0la"]
+[gd_scene load_steps=4 format=3 uid="uid://dvkjcfdpwe0la"]
 
-[ext_resource type="Script" path="res://TypingTextEffect.gd" id="1_qqghg"]
+[ext_resource type="Script" path="res://introduction.gd" id="1_5n0k1"]
+[ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="2_hhk4c"]
+[ext_resource type="Script" path="res://IntroDialogue.gd" id="3_yak1v"]
 
-[node name="Typing Text Effect" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5n0k1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -12.0
-offset_top = -13.0
-offset_right = 1163.0
-offset_bottom = 656.0
-color = Color(0, 0, 0, 1)
+[node name="9078" type="Sprite2D" parent="."]
+position = Vector2(585.5, 322)
+scale = Vector2(0.2454, 0.198758)
+texture = ExtResource("2_hhk4c")
 
-[node name="Testing Text" type="Label" parent="."]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 29.0
-offset_right = 1122.0
-offset_bottom = 615.0
-text = "
-This text is for testing purposes
+[node name="CPUParticles2D" type="CPUParticles2D" parent="9078"]
+position = Vector2(-2385.9, -1620.06)
+scale = Vector2(4.07498, 5.03125)
 
-<p>Lorem ipsum dolor sit amet. Hic laboriosam cumque aut eligendi galisum et voluptas veritatis ut repellendus provident. Sed ducimus modi ea vitae ipsam est repellat enim. </p><p>Ea perspiciatis minima qui saepe molestiae et nihil numquam eum quas magni id odio ratione est architecto commodi. Ut consectetur quia est rerum laboriosam id ipsa repellat sed ipsam quia qui dolore nemo. </p><p>Ut officia architecto qui Quis voluptas sed dolore mollitia. Vel aspernatur voluptatibus aut culpa debitis non aspernatur voluptatem cum dignissimos adipisci sed sequi magnam vel galisum assumenda quo voluptatem veniam? Qui doloremque itaque ut sequi corporis eum maxime laboriosam. Eos architecto laboriosam vel voluptatem temporibus qui earum omnis. </p><p>Aut sequi praesentium qui repellendus similique non facilis ducimus et repudiandae quam. Ut velit tenetur sit maxime minima et assumenda repellendus ex omnis laborum ad rerum Quis aut autem rerum hic perferendis similique. </p><p>Et dolorum deleniti ut accusamus vero 33 iusto assumenda qui excepturi tenetur hic sapiente molestiae. Sed assumenda magni a dolorem beatae est excepturi fugit qui autem galisum. </p><p>Est incidunt autem aut consectetur maxime ut consectetur omnis. Ut labore voluptatem aut aliquam blanditiis et consectetur voluptatibus non facilis ratione aut quaerat corporis in harum voluptates eum voluptatem galisum. Ut sapiente natus non sunt fuga qui cupiditate optio et soluta voluptatum aut rerum omnis non commodi architecto. Quo officia omnis qui amet nobis qui consequatur perspiciatis ut optio quas id fuga aspernatur et nisi enim id maxime libero. </p>
-"
-horizontal_alignment = 1
-autowrap_mode = 3
-visible_ratio = -0.000599161
-script = ExtResource("1_qqghg")
+[node name="Polygon2D" type="Polygon2D" parent="9078"]
+color = Color(0.0235294, 0.0235294, 0.0235294, 0.827451)
+polygon = PackedVector2Array(-2076.2, -1232.65, -2104.73, 1423.84, 2214.75, 1383.59, 2210.68, -1277.94)
+
+[node name="Dialogue" type="Label" parent="9078"]
+offset_left = -1811.0
+offset_top = -805.0
+offset_right = 2135.0
+offset_bottom = 1258.0
+theme_override_font_sizes/font_size = 70
+text = "Modern Day. 
+
+<Character Name> Has been a private investigator for years. He's always been ahead of the technology curve, using 
+the latest technology to solve his case. He's good. Too good.
+
+He's an overworker, and unfortunatly has lead him to a lonely life. He had a wife and kids, but she left some time ago
+because he's too invested in his work. 
+
+The last few months he's been assigned to the biggest case yet. A case that has taken over his entire life, and 
+lead him to drinking to ease the pain and guilt of his past.
+
+Last night, he discovered a huge clue that shook him to his core. To ease himself, he did what he's recently done to 
+ease the pain. He hit the bar. This time he had too much..."
+lines_skipped = 1
+script = ExtResource("3_yak1v")
+
+[node name="Begin" type="Button" parent="9078/Dialogue"]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1491.0
+offset_top = 1535.0
+offset_right = 2192.0
+offset_bottom = 1957.0
+theme_override_font_sizes/font_size = 100
+text = "Begin"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
