@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn4blsonwbvbn"]
+
+[ext_resource type="Texture2D" uid="uid://dtoyxp8vrkddn" path="res://Assets/Backgrounds/Doorway.png" id="1_haglu"]
+
+[node name="Doorway" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.419596, 0.419596)
+texture = ExtResource("1_haglu")

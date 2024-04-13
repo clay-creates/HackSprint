@@ -1,29 +1,29 @@
 [gd_scene load_steps=3 format=3 uid="uid://csr4hxvy8tap"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_6xqhf"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_uhjj5"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_6xqhf"]
+[ext_resource type="Texture2D" uid="uid://0mueh4ob1qv3" path="res://Assets/Backgrounds/Title.jpg" id="2_0fiap"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_6xqhf")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.443359, 0.421231)
+texture = ExtResource("2_0fiap")
+
 [node name="Play" type="Button" parent="."]
-offset_left = 268.0
+offset_left = 364.0
 offset_top = 452.0
-offset_right = 426.0
+offset_right = 522.0
 offset_bottom = 516.0
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 714.0
+offset_left = 633.0
 offset_top = 452.0
-offset_right = 872.0
+offset_right = 791.0
 offset_bottom = 516.0
 text = "Quit"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = SubResource("ViewportTexture_uhjj5")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
