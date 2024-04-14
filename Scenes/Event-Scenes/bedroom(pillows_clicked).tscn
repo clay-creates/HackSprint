@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhdxch1w8dguw"]
+
+[ext_resource type="Script" path="res://Scenes/Event-Scenes/bedroom(pillows_clicked).gd" id="1_8l0es"]
+[ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_o7cx8"]
+[ext_resource type="Script" path="res://Scripts/IntroDialogue.gd" id="2_e2n53"]
+[ext_resource type="Texture2D" uid="uid://be6hti0y2r8e" path="res://Assets/Backgrounds/Events/Bedroom/Bedroom-Event-Pillow2.png" id="3_43ed2"]
+[ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="4_i7jl2"]
+[ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="5_koqtr"]
+
+[node name="Bedroom(Pillows-Clicked)" type="Node2D"]
+script = ExtResource("1_8l0es")
+
+[node name="9078" type="Sprite2D" parent="."]
+position = Vector2(585.5, 322)
+scale = Vector2(0.2454, 0.198758)
+texture = ExtResource("1_o7cx8")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="9078"]
+position = Vector2(-2385.9, -1620.06)
+scale = Vector2(4.07498, 5.03125)
+
+[node name="Polygon2D" type="Polygon2D" parent="9078"]
+visible = false
+color = Color(0.0235294, 0.0235294, 0.0235294, 0.827451)
+polygon = PackedVector2Array(-2076.2, -1232.65, -2104.73, 1423.84, 2214.75, 1383.59, 2210.68, -1277.94)
+
+[node name="Dialogue" type="Label" parent="9078"]
+visible = false
+offset_left = -1811.0
+offset_top = -805.0
+offset_right = 2135.0
+offset_bottom = 1258.0
+theme_override_font_sizes/font_size = 70
+text = "Modern Day. 
+
+<Character Name> Has been a private investigator for years. He's always been ahead of the technology curve, using 
+the latest technology to solve his case. He's good. Too good.
+
+He's an overworker, and unfortunatly has lead him to a lonely life. He had a wife and kids, but she left some time ago
+because he's too invested in his work. 
+
+The last few months he's been assigned to the biggest case yet. A case that has taken over his entire life, and 
+lead him to drinking to ease the pain and guilt of his past.
+
+Last night, he discovered a huge clue that shook him to his core. To ease himself, he did what he's recently done to 
+ease the pain. He hit the bar. This time he had too much..."
+lines_skipped = 1
+script = ExtResource("2_e2n53")
+
+[node name="Begin" type="Button" parent="9078/Dialogue"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 1491.0
+offset_top = 1535.0
+offset_right = 2192.0
+offset_bottom = 1957.0
+theme_override_font_sizes/font_size = 100
+text = "Begin"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.5, 323.499)
+scale = Vector2(0.853175, 0.853175)
+texture = ExtResource("3_43ed2")
+
+[node name="Arrow_Template" parent="." instance=ExtResource("4_i7jl2")]
+
+[node name="right_arrow_sprite_LR" type="Sprite2D" parent="Arrow_Template"]
+position = Vector2(1059.48, 299)
+scale = Vector2(0.0581633, 0.0581633)
+texture = ExtResource("5_koqtr")
+
+[node name="right_arrow" type="Area2D" parent="Arrow_Template/right_arrow_sprite_LR"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/right_arrow_sprite_LR/right_arrow"]
+polygon = PackedVector2Array(-231.799, 34.3857, -610.045, 464.21, -506.887, 532.982, 610.656, 34.3857, 593.465, -34.3862, -506.887, -515.79, -541.273, -447.018)
+
+[node name="left_arrow_sprite_LR" type="Sprite2D" parent="Arrow_Template"]
+position = Vector2(95, 299)
+scale = Vector2(0.0581633, 0.0581633)
+texture = ExtResource("5_koqtr")
+flip_h = true
+
+[node name="left_arrow" type="Area2D" parent="Arrow_Template/left_arrow_sprite_LR"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_LR/left_arrow"]
+polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
+
+[connection signal="input_event" from="Arrow_Template/right_arrow_sprite_LR/right_arrow" to="." method="_on_right_arrow_input_event"]
+[connection signal="input_event" from="Arrow_Template/left_arrow_sprite_LR/left_arrow" to="." method="_on_left_arrow_input_event"]

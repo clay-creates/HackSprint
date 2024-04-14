@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsqy4127nod2w"]
+[gd_scene load_steps=9 format=3 uid="uid://bsqy4127nod2w"]
 
 [ext_resource type="Script" path="res://Scripts/bedroom.gd" id="1_d0tbp"]
 [ext_resource type="Texture2D" uid="uid://nhvmqfyt2r2m" path="res://Assets/Backgrounds/Bedroom.png" id="1_dvqjx"]
@@ -6,6 +6,12 @@
 [ext_resource type="Script" path="res://Scripts/IntroDialogue.gd" id="2_pu4er"]
 [ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="5_qycac"]
 [ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="6_tlamx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcsc2"]
+size = Vector2(169.891, 66.2525)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xr4c6"]
+size = Vector2(122.311, 36.1109)
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_d0tbp")
@@ -63,6 +69,17 @@ position = Vector2(576, 324)
 scale = Vector2(0.858466, 0.858466)
 texture = ExtResource("1_dvqjx")
 
+[node name="Pillows" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Pillows"]
+position = Vector2(-20.313, 240.276)
+rotation = 0.16057
+shape = SubResource("RectangleShape2D_xcsc2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D/Pillows"]
+position = Vector2(-149.103, 175.895)
+shape = SubResource("RectangleShape2D_xr4c6")
+
 [node name="Arrow_Template" parent="." instance=ExtResource("5_qycac")]
 
 [node name="right_arrow_sprite_BR" type="Sprite2D" parent="Arrow_Template"]
@@ -86,5 +103,6 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_BR/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
+[connection signal="input_event" from="Sprite2D/Pillows" to="." method="_on_pillows_input_event"]
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_BR/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_BR/left_arrow" to="." method="_on_left_arrow_input_event"]
