@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://0gnhp5ofolsw"]
+
+[ext_resource type="Script" path="res://Scripts/arrow_template.gd" id="1_butd6"]
+[ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="2_s1rtu"]
+
+[node name="Arrow_Template" type="Node2D"]
+script = ExtResource("1_butd6")
+
+[node name="right_arrow_sprite" type="Sprite2D" parent="."]
+position = Vector2(1059.48, 299)
+scale = Vector2(0.0581633, 0.0581633)
+texture = ExtResource("2_s1rtu")
+
+[node name="right_arrow" type="Area2D" parent="right_arrow_sprite"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="right_arrow_sprite/right_arrow"]
+polygon = PackedVector2Array(-231.799, 34.3857, -610.045, 464.21, -506.887, 532.982, 610.656, 34.3857, 593.465, -34.3862, -506.887, -515.79, -541.273, -447.018)
+
+[node name="left_arrow_sprite" type="Sprite2D" parent="."]
+position = Vector2(95, 299)
+scale = Vector2(0.0581633, 0.0581633)
+texture = ExtResource("2_s1rtu")
+flip_h = true
+
+[node name="left_arrow" type="Area2D" parent="left_arrow_sprite"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="left_arrow_sprite/left_arrow"]
+polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)

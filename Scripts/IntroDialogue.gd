@@ -18,7 +18,7 @@ he did what he's recently done to ease the pain. He hit the bar.
 This time he had too much..."
 #var visible_characters: int = 0
 #var visible_characters: int = 0
-var text_speed: float = 0.05  # Seconds between characters
+var text_speed: float = 0.0005  # Seconds between characters
 var timer: Timer
 var begin_button: Button
 
