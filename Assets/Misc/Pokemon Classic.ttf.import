@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://vmg5clt7gmud"
+path="res://.godot/imported/Pokemon Classic.ttf-9c2b8d5f873454e914b37e4ead07c1ed.fontdata"
+
+[deps]
+
+source_file="res://Assets/Misc/Pokemon Classic.ttf"
+dest_files=["res://.godot/imported/Pokemon Classic.ttf-9c2b8d5f873454e914b37e4ead07c1ed.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
