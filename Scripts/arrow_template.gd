@@ -14,6 +14,8 @@ func _on_right_arrow_input_event(viewport, event, shape_idx):
 		
 		if str(current_scene) == "/root/Starting-Room":
 			change_scene("res://Scenes/doorway.tscn")
+		if str(current_scene) == "/root/Living-Room":
+			change_scene("res://Scenes/main_room.tscn")
 
 
 func _on_left_arrow_input_event(viewport, event, shape_idx):
@@ -23,3 +25,5 @@ func _on_left_arrow_input_event(viewport, event, shape_idx):
 		
 		if str(current_scene) == "/root/Starting-Room":
 			change_scene("res://Scenes/living_room.tscn")
+		if str(current_scene) == "/root/Doorway":
+			change_scene("res://Scenes/main_room.tscn")

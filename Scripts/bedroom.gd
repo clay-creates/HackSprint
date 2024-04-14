@@ -12,8 +12,8 @@ func _on_right_arrow_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("Right arrow clicked")
 		
-		if str(current_scene) == "/root/Starting-Room":
-			change_scene("res://Scenes/doorway.tscn")
+		if str(current_scene) == "/root/Bedroom":
+			change_scene("res://Scenes/kitchen.tscn")
 
 
 func _on_left_arrow_input_event(viewport, event, shape_idx):
@@ -21,5 +21,5 @@ func _on_left_arrow_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("Left arrow clicked")
 		
-		if str(current_scene) == "/root/Starting-Room":
-			change_scene("res://Scenes/living_room.tscn")
+		if str(current_scene) == "/root/Bedroom":
+			change_scene("res://Scenes/doorway.tscn")
