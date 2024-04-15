@@ -1,12 +1,60 @@
-~ start
 
-Ben: Hello!
+~ Main_Intro
+
+...
+What is this place..?
+How did I get here..?
+
+=> END 
+
+~ Fruit_Bowl
+
+You've moved the fruit bowl. 
+You find a note. It shows the letter 'Y'
 
 => END
 
-~ main_room_safe_found
+~ Cabinet
 
-Smitty Yagermanjenson: Hmmm.. I've found something...
-Smitty Yagermanjenson: What in the world is going on?
+You open the cabinet
+You find a note. It shows the letter 'E'.
 
 => END
+
+~ Vent
+You open the vent.
+You find a note, it shows the letter 'A'
+
+~ Pillows
+
+You move the pillows.
+You find a note. It shows the letter 'L'
+
+=> END 
+
+~ Oven
+
+You open the oven.
+You find a note. It shows the letter 'I'
+
+=> END 
+
+~ Safe
+
+You discovered a safe.
+You find a note. It shows the letter 'T'
+
+=> END 
+
+~ Solved
+
+Where did that come from??
+'...'
+
+=> END 
+
+~ Taking_too_long
+
+It really isn't that hard.. 
+
+=> END 

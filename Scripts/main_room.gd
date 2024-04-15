@@ -3,7 +3,9 @@ extends Node2D
 func _ready():
 	var safe = Safe.new()
 	add_child(safe)
-
+	if GlobalVar.intro_count == 0:
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/Dialogue.dialogue"), "Main_Intro")
+		GlobalVar.track_intro_dialogue()
 func change_scene(scene_path):
 	get_tree().change_scene_to_file(scene_path)
 
