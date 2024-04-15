@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn4blsonwbvbn"]
+[gd_scene load_steps=8 format=3 uid="uid://dn4blsonwbvbn"]
 
 [ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_8pi2y"]
 [ext_resource type="Script" path="res://Scripts/doorway.gd" id="1_8r12q"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="2_a0ayt"]
 [ext_resource type="Script" path="res://Scripts/IntroDialogue.gd" id="2_bcxom"]
 [ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="3_sfatn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g541"]
+size = Vector2(157.528, 132.504)
 
 [node name="Doorway" type="Node2D"]
 script = ExtResource("1_8r12q")
@@ -63,6 +66,12 @@ position = Vector2(576, 324)
 scale = Vector2(0.419596, 0.419596)
 texture = ExtResource("1_haglu")
 
+[node name="Vent" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Vent"]
+position = Vector2(579.012, 520.026)
+shape = SubResource("RectangleShape2D_0g541")
+
 [node name="Arrow_Template" parent="." instance=ExtResource("2_a0ayt")]
 script = null
 
@@ -87,5 +96,6 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_DW/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
+[connection signal="input_event" from="Sprite2D/Vent" to="." method="_on_vent_input_event"]
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_DW/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_DW/left_arrow" to="." method="_on_left_arrow_input_event"]

@@ -1,19 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdt8tdmvevpsp"]
+[gd_scene load_steps=7 format=3 uid="uid://bhdxch1w8dguw"]
 
-[ext_resource type="Script" path="res://Scripts/dining_room.gd" id="1_7k2lc"]
-[ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_os6lw"]
-[ext_resource type="Texture2D" uid="uid://cjyoj5jdg0w1f" path="res://Assets/Backgrounds/Dining-Room.png" id="1_ssivh"]
-[ext_resource type="Script" path="res://Scripts/IntroDialogue.gd" id="2_55tph"]
-[ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="5_k2jsn"]
-[ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="6_d840d"]
+[ext_resource type="Script" path="res://Scripts/Event Scripts/bedroom(pillows_clicked).gd" id="1_8l0es"]
+[ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_o7cx8"]
+[ext_resource type="Script" path="res://Scripts/IntroDialogue.gd" id="2_e2n53"]
+[ext_resource type="Texture2D" uid="uid://be6hti0y2r8e" path="res://Assets/Backgrounds/Events/Bedroom/Bedroom-Event-Pillow2.png" id="3_43ed2"]
+[ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="4_i7jl2"]
+[ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="5_koqtr"]
 
-[node name="Dining-Room" type="Node2D"]
-script = ExtResource("1_7k2lc")
+[node name="Bedroom(Pillows-Clicked)" type="Node2D"]
+script = ExtResource("1_8l0es")
 
 [node name="9078" type="Sprite2D" parent="."]
 position = Vector2(585.5, 322)
 scale = Vector2(0.2454, 0.198758)
-texture = ExtResource("1_os6lw")
+texture = ExtResource("1_o7cx8")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="9078"]
 position = Vector2(-2385.9, -1620.06)
@@ -45,7 +45,7 @@ lead him to drinking to ease the pain and guilt of his past.
 Last night, he discovered a huge clue that shook him to his core. To ease himself, he did what he's recently done to 
 ease the pain. He hit the bar. This time he had too much..."
 lines_skipped = 1
-script = ExtResource("2_55tph")
+script = ExtResource("2_e2n53")
 
 [node name="Begin" type="Button" parent="9078/Dialogue"]
 visible = false
@@ -59,38 +59,32 @@ theme_override_font_sizes/font_size = 100
 text = "Begin"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(0.420573, 0.420573)
-texture = ExtResource("1_ssivh")
+position = Vector2(576.5, 323.499)
+scale = Vector2(0.853175, 0.853175)
+texture = ExtResource("3_43ed2")
 
-[node name="Cabinet" type="Area2D" parent="Sprite2D"]
+[node name="Arrow_Template" parent="." instance=ExtResource("4_i7jl2")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Cabinet"]
-polygon = PackedVector2Array(-394.7, -506.452, -389.944, -209.238, -249.659, -190.217, -254.415, -454.142)
-
-[node name="Arrow_Template" parent="." instance=ExtResource("5_k2jsn")]
-
-[node name="right_arrow_sprite_DR" type="Sprite2D" parent="Arrow_Template"]
+[node name="right_arrow_sprite_LR" type="Sprite2D" parent="Arrow_Template"]
 position = Vector2(1059.48, 299)
 scale = Vector2(0.0581633, 0.0581633)
-texture = ExtResource("6_d840d")
+texture = ExtResource("5_koqtr")
 
-[node name="right_arrow" type="Area2D" parent="Arrow_Template/right_arrow_sprite_DR"]
+[node name="right_arrow" type="Area2D" parent="Arrow_Template/right_arrow_sprite_LR"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/right_arrow_sprite_DR/right_arrow"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/right_arrow_sprite_LR/right_arrow"]
 polygon = PackedVector2Array(-231.799, 34.3857, -610.045, 464.21, -506.887, 532.982, 610.656, 34.3857, 593.465, -34.3862, -506.887, -515.79, -541.273, -447.018)
 
-[node name="left_arrow_sprite_DR" type="Sprite2D" parent="Arrow_Template"]
+[node name="left_arrow_sprite_LR" type="Sprite2D" parent="Arrow_Template"]
 position = Vector2(95, 299)
 scale = Vector2(0.0581633, 0.0581633)
-texture = ExtResource("6_d840d")
+texture = ExtResource("5_koqtr")
 flip_h = true
 
-[node name="left_arrow" type="Area2D" parent="Arrow_Template/left_arrow_sprite_DR"]
+[node name="left_arrow" type="Area2D" parent="Arrow_Template/left_arrow_sprite_LR"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_DR/left_arrow"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_LR/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
-[connection signal="input_event" from="Sprite2D/Cabinet" to="." method="_on_cabinet_input_event"]
-[connection signal="input_event" from="Arrow_Template/right_arrow_sprite_DR/right_arrow" to="." method="_on_right_arrow_input_event"]
-[connection signal="input_event" from="Arrow_Template/left_arrow_sprite_DR/left_arrow" to="." method="_on_left_arrow_input_event"]
+[connection signal="input_event" from="Arrow_Template/right_arrow_sprite_LR/right_arrow" to="." method="_on_right_arrow_input_event"]
+[connection signal="input_event" from="Arrow_Template/left_arrow_sprite_LR/left_arrow" to="." method="_on_left_arrow_input_event"]

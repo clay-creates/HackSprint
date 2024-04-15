@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy8r3yxhxw5w5"]
+[gd_scene load_steps=8 format=3 uid="uid://cy8r3yxhxw5w5"]
 
 [ext_resource type="Script" path="res://Scripts/main_room.gd" id="1_6h6iq"]
 [ext_resource type="Texture2D" uid="uid://bdemae30fu4tl" path="res://Assets/Backgrounds/Starting-Room.png" id="1_g0142"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="4_qyk7q"]
 [ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="5_1plxh"]
 
-[node name="Starting-Room" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keprq"]
+size = Vector2(72.4, 43.9258)
+
+[node name="Main-Room" type="Node2D"]
 script = ExtResource("1_6h6iq")
 
 [node name="9078" type="Sprite2D" parent="."]
@@ -63,6 +66,13 @@ position = Vector2(576, 324)
 scale = Vector2(0.833333, 0.854806)
 texture = ExtResource("1_g0142")
 
+[node name="Safe" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Safe"]
+position = Vector2(-39.8, 44.7189)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_keprq")
+
 [node name="Arrow_Template" parent="." instance=ExtResource("4_qyk7q")]
 script = null
 
@@ -87,5 +97,6 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_main/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
+[connection signal="input_event" from="Sprite2D/Safe" to="." method="_on_safe_input_event"]
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_main/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_main/left_arrow" to="." method="_on_left_arrow_input_event"]
