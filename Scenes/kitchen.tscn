@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cybxudp10ffks"]
+[gd_scene load_steps=8 format=3 uid="uid://cybxudp10ffks"]
 
 [ext_resource type="Script" path="res://Scripts/kitchen.gd" id="1_6tmri"]
 [ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_65rvh"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/IntroDialogue.gd" id="2_mxkst"]
 [ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="5_f5lxm"]
 [ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="6_08y0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuw1h"]
+size = Vector2(166.054, 149.449)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_6tmri")
@@ -63,6 +66,12 @@ position = Vector2(576, 324)
 scale = Vector2(0.421549, 0.421549)
 texture = ExtResource("1_iy5ob")
 
+[node name="Oven" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Oven"]
+position = Vector2(-59.3051, 304.828)
+shape = SubResource("RectangleShape2D_yuw1h")
+
 [node name="Arrow_Template" parent="." instance=ExtResource("5_f5lxm")]
 
 [node name="right_arrow_sprite_K" type="Sprite2D" parent="Arrow_Template"]
@@ -86,5 +95,6 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_K/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
+[connection signal="input_event" from="Sprite2D/Oven" to="." method="_on_oven_input_event"]
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_K/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_K/left_arrow" to="." method="_on_left_arrow_input_event"]

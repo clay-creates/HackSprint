@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready():
-	pass
+	var vent = Vent.new()
+	add_child(vent)
 
 func change_scene(scene_path):
 	get_tree().change_scene_to_file(scene_path)
@@ -23,3 +24,11 @@ func _on_left_arrow_input_event(viewport, event, shape_idx):
 		
 		if str(current_scene) == "/root/Doorway":
 			change_scene("res://Scenes/main_room.tscn")
+
+
+func _on_vent_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		var vent = Vent.new()
+		add_child(vent)
+		print(vent.clickable_text)
+		change_scene("res://Scenes/Event-Scenes/doorway(vent_clicked).tscn")
