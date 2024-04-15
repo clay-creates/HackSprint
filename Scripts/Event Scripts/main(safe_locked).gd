@@ -20,3 +20,9 @@ func _on_left_arrow_input_event(viewport, event, shape_idx):
 		
 		if str(current_scene) == "/root/Main(Safe-Locked)":
 			change_scene("res://Scenes/living_room.tscn")
+
+func set_dialogue_text():
+	var text: String = "Hmm, It seems I've found something.."
+
+func _ready():
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/Dialogue.dialogue"), "main_room_safe_found")
