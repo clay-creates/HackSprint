@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ck2tiiqcf4b4x"
+path="res://.godot/imported/Sad Piano.mp3-6fc90bca3f69dabdaaac6b9ee0a57eb7.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundFX/Music/Sad Piano.mp3"
+dest_files=["res://.godot/imported/Sad Piano.mp3-6fc90bca3f69dabdaaac6b9ee0a57eb7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

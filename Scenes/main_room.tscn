@@ -70,7 +70,6 @@ texture = ExtResource("1_g0142")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Safe"]
 position = Vector2(-39.8, 44.7189)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_keprq")
 
 [node name="Arrow_Template" parent="." instance=ExtResource("4_qyk7q")]
