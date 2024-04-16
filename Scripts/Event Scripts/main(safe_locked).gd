@@ -38,8 +38,19 @@ func _on_note_y_input_event(viewport, event, shape_idx):
 			get_node("Note-Y (large)").show()
 			is_note_visible = true
 
+func _on_note_t_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if is_note_visible:
+			get_node("Note-T (large)").hide()
+			is_note_visible = false
+		else:
+			get_node("Note-T (large)").show()
+			is_note_visible = true
+
+
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if is_note_visible:
 			get_node("Note-Y (large)").hide()
+			get_node("Note-T (large)").hide()
 			is_note_visible = false

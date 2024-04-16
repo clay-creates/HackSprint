@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf25ekr3vg7iv"]
+[gd_scene load_steps=10 format=3 uid="uid://bf25ekr3vg7iv"]
 
 [ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_cl8ts"]
 [ext_resource type="Script" path="res://Scripts/Event Scripts/main(safe_locked).gd" id="1_qcskl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="5_fgmt6"]
 [ext_resource type="Texture2D" uid="uid://csm2r455beoe7" path="res://Assets/Notes/Note.png" id="5_rqibf"]
 [ext_resource type="Texture2D" uid="uid://b8n2pqqiqk70n" path="res://Assets/Notes/Note-Y.png" id="6_5377c"]
+[ext_resource type="Texture2D" uid="uid://byh1kbjngthw4" path="res://Assets/Notes/Note-T.png" id="8_hbbba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_st22t"]
 size = Vector2(516.756, 361.73)
@@ -83,6 +84,24 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_main/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
+[node name="Note-T (small)" type="Sprite2D" parent="."]
+position = Vector2(552, 445.75)
+scale = Vector2(0.0774059, 0.0387029)
+texture = ExtResource("5_rqibf")
+
+[node name="Note-T" type="Area2D" parent="Note-T (small)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note-T (small)/Note-T"]
+position = Vector2(-12.9189, -19.3773)
+shape = SubResource("RectangleShape2D_st22t")
+
+[node name="Note-T (large)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(581, 340)
+scale = Vector2(0.797071, 0.797071)
+texture = ExtResource("8_hbbba")
+
 [connection signal="input_event" from="Note-Y (small)/Note-Y" to="." method="_on_note_y_input_event"]
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_main/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_main/left_arrow" to="." method="_on_left_arrow_input_event"]
+[connection signal="input_event" from="Note-T (small)/Note-T" to="." method="_on_note_t_input_event"]
