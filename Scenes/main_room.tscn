@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=7 format=3 uid="uid://cy8r3yxhxw5w5"]
-=======
 [gd_scene load_steps=11 format=3 uid="uid://cy8r3yxhxw5w5"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Scripts/main_room.gd" id="1_6h6iq"]
 [ext_resource type="Texture2D" uid="uid://bdemae30fu4tl" path="res://Assets/Backgrounds/Starting-Room.png" id="1_g0142"]
@@ -79,11 +76,8 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_main/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
-<<<<<<< Updated upstream
 [connection signal="input_event" from="SceneImage/Safe" to="." method="_on_safe_input_event"]
-=======
 [connection signal="input_event" from="Sprite2D/Safe" to="." method="_on_safe_input_event"]
 [connection signal="input_event" from="Note-Y (small)/Note-Y" to="." method="_on_note_y_input_event"]
->>>>>>> Stashed changes
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_main/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_main/left_arrow" to="." method="_on_left_arrow_input_event"]
