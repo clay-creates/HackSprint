@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b64tiw0nb17a8"]
+[gd_scene load_steps=10 format=3 uid="uid://b64tiw0nb17a8"]
 
 [ext_resource type="Script" path="res://Scripts/Event Scripts/doorway(vent_clicked).gd" id="1_gesyb"]
 [ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_pulk0"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://c8pnaxul7q1wr" path="res://Assets/Backgrounds/Events/Doorway/Doorway(Vent-Clicked).png" id="3_gswa0"]
 [ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="4_f2dd1"]
 [ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="5_k8wsh"]
+[ext_resource type="Texture2D" uid="uid://csm2r455beoe7" path="res://Assets/Notes/Note.png" id="7_pw5nk"]
+[ext_resource type="Texture2D" uid="uid://bu2dnknqagq5y" path="res://Assets/Notes/Note-E.png" id="8_ccu55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6inh"]
+size = Vector2(538.231, 377.367)
 
 [node name="Doorway(Vent-Clicked)" type="Node2D"]
 script = ExtResource("1_gesyb")
@@ -87,5 +92,23 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_DW/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
+[node name="Note-E (small)" type="Sprite2D" parent="."]
+position = Vector2(820.5, 558.5)
+scale = Vector2(0.0891812, 0.0397491)
+texture = ExtResource("7_pw5nk")
+
+[node name="Note-E" type="Area2D" parent="Note-E (small)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note-E (small)/Note-E"]
+position = Vector2(-28.0293, 0)
+shape = SubResource("RectangleShape2D_t6inh")
+
+[node name="Note-E (large)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(600, 328)
+scale = Vector2(0.777197, 0.777197)
+texture = ExtResource("8_ccu55")
+
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_DW/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_DW/left_arrow" to="." method="_on_left_arrow_input_event"]
+[connection signal="input_event" from="Note-E (small)/Note-E" to="." method="_on_note_e_input_event"]

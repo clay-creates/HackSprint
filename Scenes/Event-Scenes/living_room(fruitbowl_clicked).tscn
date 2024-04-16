@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvrx2iee558fh"]
+[gd_scene load_steps=10 format=3 uid="uid://cvrx2iee558fh"]
 
 [ext_resource type="Script" path="res://Scripts/Event Scripts/living_room(fruitbowl_clicked).gd" id="1_s5wav"]
 [ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_sp168"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dd7cw4lb13o1s" path="res://Assets/Backgrounds/Events/Living Room/Living-Room(Fruitbowl-Clicked-Event).png" id="3_7ikby"]
 [ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="4_ehqlu"]
 [ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="5_rno0k"]
+[ext_resource type="Texture2D" uid="uid://csm2r455beoe7" path="res://Assets/Notes/Note.png" id="7_rqs7t"]
+[ext_resource type="Texture2D" uid="uid://di0ko36hpa0fh" path="res://Assets/Notes/Note-R.png" id="8_yqiob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1gbe"]
+size = Vector2(538.229, 419.408)
 
 [node name="Living-Room(Fruitbowl-Clicked)" type="Node2D"]
 script = ExtResource("1_s5wav")
@@ -86,5 +91,23 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_LR/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
+[node name="Note-R (small)" type="Sprite2D" parent="."]
+position = Vector2(558.5, 416.5)
+scale = Vector2(0.0891813, 0.0606695)
+texture = ExtResource("7_rqs7t")
+
+[node name="Area2D" type="Area2D" parent="Note-R (small)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note-R (small)/Area2D"]
+position = Vector2(-28.0327, -12.3369)
+shape = SubResource("RectangleShape2D_m1gbe")
+
+[node name="Note-R (large)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(584, 328)
+scale = Vector2(0.870293, 0.870293)
+texture = ExtResource("8_yqiob")
+
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_LR/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_LR/left_arrow" to="." method="_on_left_arrow_input_event"]
+[connection signal="input_event" from="Note-R (small)/Area2D" to="." method="_on_area_2d_input_event"]
