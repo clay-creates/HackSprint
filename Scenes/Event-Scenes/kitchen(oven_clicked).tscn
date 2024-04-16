@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://stp72y4jf4ri"]
+[gd_scene load_steps=10 format=3 uid="uid://stp72y4jf4ri"]
 
 [ext_resource type="Script" path="res://Scripts/Event Scripts/kitchen(oven_clicked).gd" id="1_pkapy"]
 [ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_t0kk5"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://br3e1k6mwk63m" path="res://Assets/Backgrounds/Events/Kitchen/Kitchen(Oven-Clicked).png" id="3_k2kbn"]
 [ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="4_fp5bv"]
 [ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="5_a2pa0"]
+[ext_resource type="Texture2D" uid="uid://csm2r455beoe7" path="res://Assets/Notes/Note.png" id="7_7opwa"]
+[ext_resource type="Texture2D" uid="uid://csvjmloqvc3nc" path="res://Assets/Notes/Note-I.png" id="8_xvq1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vom0u"]
+size = Vector2(549.7, 377.369)
 
 [node name="Kitchen(Oven-Clicked)" type="Node2D"]
 script = ExtResource("1_pkapy")
@@ -86,5 +91,23 @@ flip_h = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_K/left_arrow"]
 polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
 
+[node name="Note-I (small)" type="Sprite2D" parent="."]
+position = Vector2(553, 447.5)
+scale = Vector2(0.041841, 0.039749)
+texture = ExtResource("7_7opwa")
+
+[node name="Note-I" type="Area2D" parent="Note-I (small)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note-I (small)/Note-I"]
+position = Vector2(-35.8496, -0.000976563)
+shape = SubResource("RectangleShape2D_vom0u")
+
+[node name="Note-I (large)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(582, 352)
+scale = Vector2(0.824268, 0.824268)
+texture = ExtResource("8_xvq1f")
+
 [connection signal="input_event" from="Arrow_Template/right_arrow_sprite_K/right_arrow" to="." method="_on_right_arrow_input_event"]
 [connection signal="input_event" from="Arrow_Template/left_arrow_sprite_K/left_arrow" to="." method="_on_left_arrow_input_event"]
+[connection signal="input_event" from="Note-I (small)/Note-I" to="." method="_on_note_i_input_event"]
