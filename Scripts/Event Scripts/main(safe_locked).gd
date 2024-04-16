@@ -23,13 +23,11 @@ func _on_left_arrow_input_event(viewport, event, shape_idx):
 		if str(current_scene) == "/root/Main(Safe-Locked)":
 			change_scene("res://Scenes/living_room.tscn")
 
-<<<<<<< Updated upstream
 func set_dialogue_text():
 	var text: String = "Hmm, It seems I've found something.."
 
 func _ready():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/Dialogue.dialogue"), "main_room_safe_found")
-=======
 
 func _on_note_y_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -45,4 +43,3 @@ func _unhandled_input(event):
 		if is_note_visible:
 			get_node("Note-Y (large)").hide()
 			is_note_visible = false
->>>>>>> Stashed changes

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf25ekr3vg7iv"]
+[gd_scene load_steps=9 format=3 uid="uid://bf25ekr3vg7iv"]
 
 [ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="1_cl8ts"]
 [ext_resource type="Script" path="res://Scripts/Event Scripts/main(safe_locked).gd" id="1_qcskl"]
@@ -28,7 +28,6 @@ position = Vector2(574.729, 322.704)
 scale = Vector2(0.836694, 0.858254)
 texture = ExtResource("3_ohwck")
 
-<<<<<<< Updated upstream
 [node name="DialogueBackground" type="Polygon2D" parent="Sprite2D"]
 visible = false
 position = Vector2(-8.0424, 250.853)
@@ -42,7 +41,7 @@ offset_top = -958.0
 offset_right = 2132.0
 offset_bottom = 1149.0
 theme_override_font_sizes/font_size = 100
-=======
+
 [node name="Note-Y (small)" type="Sprite2D" parent="."]
 position = Vector2(400, 190)
 scale = Vector2(0.0774059, 0.0774059)
@@ -52,7 +51,6 @@ texture = ExtResource("5_rqibf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Note-Y (small)/Note-Y"]
 position = Vector2(-25.8379, -0.000244141)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_st22t")
 
 [node name="Note-Y (large)" type="Sprite2D" parent="."]
@@ -60,7 +58,6 @@ visible = false
 position = Vector2(581, 340)
 scale = Vector2(0.797071, 0.797071)
 texture = ExtResource("6_5377c")
->>>>>>> Stashed changes
 
 [node name="Arrow_Template" parent="." instance=ExtResource("4_8oa0h")]
 script = null

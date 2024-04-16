@@ -5,14 +5,11 @@ var is_note_visible = false
 func _ready():
 	var safe = Safe.new()
 	add_child(safe)
-<<<<<<< Updated upstream
 	if GlobalVar.intro_count == 0:
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/Dialogue.dialogue"), "Main_Intro")
 		GlobalVar.track_intro_dialogue()
-=======
 	get_node("Note-Y (large)").hide()
 
->>>>>>> Stashed changes
 func change_scene(scene_path):
 	get_tree().change_scene_to_file(scene_path)
 
