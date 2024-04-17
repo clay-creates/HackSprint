@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	var oven = Oven.new()
 	add_child(oven)
+	Fade.fade_in(2.0)
 
 func change_scene(scene_path):
 	get_tree().change_scene_to_file(scene_path)
@@ -14,6 +15,8 @@ func _on_right_arrow_input_event(viewport, event, shape_idx):
 		print("Right arrow clicked")
 		
 		if str(current_scene) == "/root/Kitchen":
+			FootSteps.play_footsteps()
+			Fade.fade_out(2.0)
 			change_scene("res://Scenes/dining_room.tscn")
 
 
@@ -23,6 +26,8 @@ func _on_left_arrow_input_event(viewport, event, shape_idx):
 		print("Left arrow clicked")
 		
 		if str(current_scene) == "/root/Kitchen":
+			FootSteps.play_footsteps()
+			Fade.fade_out(2.0)
 			change_scene("res://Scenes/bedroom.tscn")
 
 

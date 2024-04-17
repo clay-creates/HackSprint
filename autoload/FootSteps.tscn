@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmc0k6yleo37"]
+
+[ext_resource type="Script" path="res://autoload/FootSteps.gd" id="1_qud7s"]
+
+[node name="FootSteps" type="Node"]
+script = ExtResource("1_qud7s")
+
+[node name="FootSteps" type="AudioStreamPlayer2D" parent="."]
+max_distance = 1000.0
+panning_strength = 0.3

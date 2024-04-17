@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwy3uxh6rfjou"]
+
+[ext_resource type="Script" path="res://Scripts/Ux/PasscodeEntry.gd" id="1_rrm1d"]
+
+[node name="PasscodeEntry" type="Node"]
+script = ExtResource("1_rrm1d")
+
+[node name="Background" type="Polygon2D" parent="."]
+color = Color(0.14902, 0.14902, 0.14902, 1)
+polygon = PackedVector2Array(2, 0, 374, 1, 374, 242, 2, 243)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 372.0
+offset_bottom = 26.0
+text = "Enter the Passcode"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 8.0
+offset_top = 41.0
+offset_right = 370.0
+offset_bottom = 159.0
+alignment = 1
+max_length = 7
+clear_button_enabled = true
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

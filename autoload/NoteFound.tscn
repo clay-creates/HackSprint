@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://54rwv4krhqws"]
+
+[ext_resource type="Script" path="res://autoload/NoteFound.gd" id="1_oviqr"]
+
+[node name="NoteFound" type="Node"]
+script = ExtResource("1_oviqr")
+
+[node name="NoteFound" type="AudioStreamPlayer2D" parent="."]
