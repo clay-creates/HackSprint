@@ -2,14 +2,14 @@
 
 ### Description
 
-[A Mysterious Beginning is a game that my partner and I created for our Hack Sprint project. Our protagonist is a grizzled, noir detective, who takes his job too seriously. While hot on the trail of a new lead, he finds himself lost in an unfamiliar place...
+A Mysterious Beginning is a game that my partner and I created for our Hack Sprint project. Our protagonist is a grizzled, noir detective, who takes his job too seriously. While hot on the trail of a new lead, he finds himself lost in an unfamiliar place...
 
 ---------------------------------------------------------------------------------------------------------
 
 We put this demo together in a week, while learning the basics of Godot and GDScript!
 
 If anyone finds this and want to play, you are free to do so!
-We hope you enjoy the humble production of our first game! :D]
+We hope you enjoy the humble production of our first game! :D
 
 ## Table of Contents
 
