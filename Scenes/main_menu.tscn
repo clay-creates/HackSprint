@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://csr4hxvy8tap"]
+[gd_scene load_steps=4 format=3 uid="uid://csr4hxvy8tap"]
 
 [ext_resource type="Texture2D" uid="uid://0mueh4ob1qv3" path="res://Assets/Backgrounds/Title.jpg" id="2_0fiap"]
+[ext_resource type="FontFile" uid="uid://1pfdt7kql56h" path="res://Top Secret Stamp.ttf" id="2_oja1u"]
 
 [sub_resource type="GDScript" id="GDScript_npuac"]
 script/source = "extends Node2D
@@ -37,6 +38,18 @@ offset_top = 452.0
 offset_right = 791.0
 offset_bottom = 516.0
 text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 372.0
+offset_top = 129.0
+offset_right = 792.0
+offset_bottom = 354.0
+theme_override_fonts/font = ExtResource("2_oja1u")
+theme_override_font_sizes/font_size = 69
+text = "A Mysterious Beginning"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

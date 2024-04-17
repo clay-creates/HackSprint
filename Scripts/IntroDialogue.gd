@@ -3,7 +3,7 @@ extends Label
 # God forgive me for what I've done.
 var full_text: String = "Modern Day. 
 
-<Character Name> Has been a private investigator for years. He's always been ahead of the 
+River Graves has been a private investigator for years. He's always been ahead of the 
 technology curve, using the latest technology to solve his case. He's good. Too good.
 
 He's an overworker, and unfortunatly has lead him to a lonely life. He had a wife and kids, 
