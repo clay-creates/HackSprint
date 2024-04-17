@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1xnnp2fm28k0"]
+
+[ext_resource type="Script" path="res://Scripts/Event Scripts/main_(door_opened).gd" id="1_0dr2d"]
+[ext_resource type="Texture2D" uid="uid://5wuwvutcpv05" path="res://Assets/Misc/9078.jpg" id="2_fgypq"]
+[ext_resource type="Texture2D" uid="uid://d4lbha6012w0o" path="res://Assets/Backgrounds/Events/Starting-Room/Starting-Room-Safe(unlocked).png" id="3_n3o47"]
+[ext_resource type="Texture2D" uid="uid://csm2r455beoe7" path="res://Assets/Notes/Note.png" id="4_6086v"]
+[ext_resource type="Texture2D" uid="uid://b8n2pqqiqk70n" path="res://Assets/Notes/Note-Y.png" id="5_3ke7y"]
+[ext_resource type="PackedScene" uid="uid://0gnhp5ofolsw" path="res://Scenes/arrow_template.tscn" id="6_yb101"]
+[ext_resource type="Texture2D" uid="uid://dthexwvam0deu" path="res://Assets/Misc/navigation-arrow-right.png" id="7_xu0pf"]
+[ext_resource type="Texture2D" uid="uid://byh1kbjngthw4" path="res://Assets/Notes/Note-T.png" id="8_eik8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8t75"]
+size = Vector2(516.756, 361.73)
+
+[node name="Main (Door-Opened)" type="Node2D"]
+script = ExtResource("1_0dr2d")
+
+[node name="9078" type="Sprite2D" parent="."]
+position = Vector2(585.5, 322)
+scale = Vector2(0.2454, 0.198758)
+texture = ExtResource("2_fgypq")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="9078"]
+position = Vector2(-2385.9, -1620.06)
+scale = Vector2(4.07498, 5.03125)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.729, 322.704)
+scale = Vector2(0.836694, 0.858254)
+texture = ExtResource("3_n3o47")
+
+[node name="DialogueBackground" type="Polygon2D" parent="Sprite2D"]
+visible = false
+position = Vector2(-8.0424, 250.853)
+scale = Vector2(0.173211, 0.060807)
+color = Color(0.0235294, 0.0235294, 0.0235294, 0.827451)
+polygon = PackedVector2Array(-2076.2, -1232.65, -2104.73, 1423.84, 2214.75, 1383.59, 2210.68, -1277.94)
+
+[node name="DialogueText" type="Label" parent="Sprite2D/DialogueBackground"]
+offset_left = -2001.0
+offset_top = -958.0
+offset_right = 2132.0
+offset_bottom = 1149.0
+theme_override_font_sizes/font_size = 100
+
+[node name="Note-Y (small)" type="Sprite2D" parent="."]
+position = Vector2(400, 190)
+scale = Vector2(0.0774059, 0.0774059)
+texture = ExtResource("4_6086v")
+
+[node name="Note-Y" type="Area2D" parent="Note-Y (small)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note-Y (small)/Note-Y"]
+position = Vector2(-25.8379, -0.000244141)
+shape = SubResource("RectangleShape2D_m8t75")
+
+[node name="Note-Y (large)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(581, 340)
+scale = Vector2(0.797071, 0.797071)
+texture = ExtResource("5_3ke7y")
+
+[node name="Arrow_Template" parent="." instance=ExtResource("6_yb101")]
+script = null
+
+[node name="right_arrow_sprite_main" type="Sprite2D" parent="Arrow_Template"]
+position = Vector2(1059.48, 299)
+scale = Vector2(0.0581633, 0.0581633)
+texture = ExtResource("7_xu0pf")
+
+[node name="right_arrow" type="Area2D" parent="Arrow_Template/right_arrow_sprite_main"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/right_arrow_sprite_main/right_arrow"]
+polygon = PackedVector2Array(-231.799, 34.3857, -610.045, 464.21, -506.887, 532.982, 610.656, 34.3857, 593.465, -34.3862, -506.887, -515.79, -541.273, -447.018)
+
+[node name="left_arrow_sprite_main" type="Sprite2D" parent="Arrow_Template"]
+position = Vector2(95, 299)
+scale = Vector2(0.0581633, 0.0581633)
+texture = ExtResource("7_xu0pf")
+flip_h = true
+
+[node name="left_arrow" type="Area2D" parent="Arrow_Template/left_arrow_sprite_main"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arrow_Template/left_arrow_sprite_main/left_arrow"]
+polygon = PackedVector2Array(223.509, 17.1929, 601.754, 447.018, 550.176, 515.79, -584.562, 51.5791, -584.562, -17.1929, 498.596, -498.597, 550.176, -498.597)
+
+[node name="Note-T (small)" type="Sprite2D" parent="."]
+position = Vector2(552, 445.75)
+scale = Vector2(0.0774059, 0.0387029)
+texture = ExtResource("4_6086v")
+
+[node name="Note-T" type="Area2D" parent="Note-T (small)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note-T (small)/Note-T"]
+position = Vector2(-12.9189, -19.3773)
+shape = SubResource("RectangleShape2D_m8t75")
+
+[node name="Note-T (large)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(581, 340)
+scale = Vector2(0.797071, 0.797071)
+texture = ExtResource("8_eik8w")
+
+[connection signal="input_event" from="Note-Y (small)/Note-Y" to="." method="_on_note_y_input_event"]
+[connection signal="input_event" from="Arrow_Template/right_arrow_sprite_main/right_arrow" to="." method="_on_right_arrow_input_event"]
+[connection signal="input_event" from="Arrow_Template/left_arrow_sprite_main/left_arrow" to="." method="_on_left_arrow_input_event"]
+[connection signal="input_event" from="Note-T (small)/Note-T" to="." method="_on_note_t_input_event"]
