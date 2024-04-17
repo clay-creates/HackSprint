@@ -2,13 +2,23 @@ extends Node2D
 
 var is_note_visible = false
 
+
 func _ready():
+
 	var safe = Safe.new()
 	add_child(safe)
 	if GlobalVar.intro_count == 0:
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/Dialogue.dialogue"), "Main_Intro")
 		GlobalVar.track_intro_dialogue()
 	get_node("Note-Y (large)").hide()
+	Fade.fade_in(2.0)
+	
+	print(GlobalVar.allfinished)
+	if GlobalVar.allfinished == 1:
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/Dialogue.dialogue"), "FoundAll")
+		get_node("PassCode/PCodeBackground").visible = true
+	else:
+		get_node("PassCode/PCodeBackground").visible = false
 
 func change_scene(scene_path):
 	get_tree().change_scene_to_file(scene_path)
@@ -20,6 +30,8 @@ func _on_right_arrow_input_event(viewport, event, shape_idx):
 		print("Right arrow clicked")
 		
 		if str(current_scene) == "/root/Main-Room":
+			FootSteps.play_footsteps()
+			Fade.fade_out(2.0)
 			change_scene("res://Scenes/doorway.tscn")
 
 
@@ -29,6 +41,8 @@ func _on_left_arrow_input_event(viewport, event, shape_idx):
 		print("Left arrow clicked")
 		
 		if str(current_scene) == "/root/Main-Room":
+			FootSteps.play_footsteps()
+			Fade.fade_out(2.0)
 			change_scene("res://Scenes/living_room.tscn")
 
 
@@ -46,7 +60,10 @@ func _on_note_y_input_event(viewport, event, shape_idx):
 			get_node("Note-Y (large)").hide()
 			is_note_visible = false
 		else:
+			NoteFound.play_paper()
+			GlobalVar.track_mainone_click()
 			get_node("Note-Y (large)").show()
+			DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/Dialogue.dialogue"), "Main1")
 			is_note_visible = true
 
 func _unhandled_input(event):

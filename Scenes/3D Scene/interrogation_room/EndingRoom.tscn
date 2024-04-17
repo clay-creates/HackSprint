@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvwrh054c7e60"]
+
+[ext_resource type="Script" path="res://Scenes/3D Scene/interrogation_room/EndingRoom.gd" id="1_si0o1"]
+[ext_resource type="PackedScene" uid="uid://bepwgsj2mo3v6" path="res://Scenes/3D Scene/interrogation_room/scene.gltf" id="1_smdgx"]
+[ext_resource type="Script" path="res://Scenes/3D Scene/interrogation_room/Character.gd" id="3_665ds"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_glstb"]
+
+[node name="EndingRoom" type="Node3D"]
+script = ExtResource("1_si0o1")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_smdgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118016, 0, 2.81509)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Sketchfab_Scene" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
+transform = Transform3D(0.472028, 0, 0.881584, 0, 1, 0, -0.881584, 0, 0.472028, 0.756104, 0, 0)
+script = ExtResource("3_665ds")
+CAMERA_CONTROLLER = NodePath("CameraController/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_glstb")
+
+[node name="PlaceholderMesh" type="MeshInstance3D" parent="Sketchfab_Scene/CharacterBody3D/CollisionShape3D"]
+
+[node name="CameraController" type="Node3D" parent="Sketchfab_Scene/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.2, 2.08165e-12)
+
+[node name="Camera3D" type="Camera3D" parent="Sketchfab_Scene/CharacterBody3D/CameraController"]
+fov = 56.7
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Sketchfab_Scene/CharacterBody3D/CameraController/Camera3D"]
+update_mode = 1
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Sketchfab_Scene"]
+transform = Transform3D(1, 0, 0, 0, -0.000349109, 1, 0, -1, -0.000349109, -0.00297257, 0.578201, -0.0189986)
+light_energy = 6.282
+light_specular = 1.036
+spot_angle_attenuation = 0.203063
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sketchfab_Scene"]
+transform = Transform3D(1, 0, 0, 0, 0.496853, 0.867835, 0, -0.867835, 0.496853, 0, 0.450873, 0.000690937)
+light_indirect_energy = 1.936
+light_specular = 5.28
+omni_range = 1.242

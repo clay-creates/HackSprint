@@ -9,33 +9,43 @@ How did I get here..?
 
 ~ Fruit_Bowl
 
-You've moved the fruit bowl. 
-You find a note. It shows the letter 'Y'
+Someone is smart..
 
 => END
 
 ~ Cabinet
 
-You open the cabinet
-You find a note. It shows the letter 'E'.
+That took a second.. Where is this going?
 
 => END
 
 ~ Vent
-You open the vent.
-You find a note, it shows the letter 'A'
+
+Someone really didn't want me to find this..
+
+=> END
+
+~ Main1
+
+What's this?
+
+=> END
+
+~ Main2
+
+Hmm, seems like there's a code...
+
+=> END
 
 ~ Pillows
 
-You move the pillows.
-You find a note. It shows the letter 'L'
+Those pillows were really soft.. 
 
 => END 
 
 ~ Oven
 
-You open the oven.
-You find a note. It shows the letter 'I'
+What an odd place to leave this...
 
 => END 
 
@@ -58,3 +68,27 @@ Where did that come from??
 It really isn't that hard.. 
 
 => END 
+
+~ WrongPassword
+
+Hmm.. That didn't work.. must be something else
+
+=> END
+
+~ Finished
+
+What is happening?!
+
+=> END
+
+~ ToBe
+
+To Be Continued...
+
+=> END
+
+~ FoundAll
+
+You have found all the letters to the puzzle, decode and enter the password.
+
+=> END
