@@ -1,5 +1,6 @@
 extends Node
 
+
 var intro_count = 0
 var vent_click = 0
 var pillow_click = 0
@@ -10,6 +11,18 @@ var main_room_one = 0
 var main_room_two = 0
 var letters_found = 0
 var allfinished = 0
+
+func reset():
+	intro_count = 0
+	vent_click = 0
+	pillow_click = 0
+	cabinet_click = 0
+	oven_click = 0
+	fruit_click = 0
+	main_room_one = 0
+	main_room_two = 0
+	letters_found = 0
+	allfinished = 0
 
 func track_intro_dialogue():
 	intro_count += 1

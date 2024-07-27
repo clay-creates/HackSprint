@@ -8,6 +8,12 @@ script/source = "extends Node2D
 
 func _ready():
 	MusicController.play_music()
+	# Fade in back from 3D view
+	Fade.fade_in(5.0)
+	# Show mouse again
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	# Reset the finidings
+	GlobalVar.reset()
 
 
 func _on_quit_pressed():

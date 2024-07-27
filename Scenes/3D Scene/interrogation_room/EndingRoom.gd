@@ -38,4 +38,5 @@ func _on_fade_timeout():
 
 func _on_quit_timeout():
 	# Quit the game
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	
